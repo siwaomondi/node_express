@@ -1,4 +1,6 @@
-import app from "../express.js";
+const express = require("express");
+
+const router = express.Router();
 var fortunes = [
     "Conquer your fears or they will conquer you.",
     "Rivers need springs.",
@@ -7,7 +9,13 @@ var fortunes = [
     "Whenever possible, keep it simple.",
 ];
 
-app.get("/about", (req, res) => {
+router.get("/", (req, res) => {
     var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render("pages/about", { fortune: randomFortune });
+    res.render("pages/about", {
+        fortune: randomFortune,
+        title: "About",
+        layout: "misc",
+    });
 });
+
+module.exports = router;
