@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
         fortune: randomFortune,
         title: "About",
         layout: "misc",
+        pageTestScript: '/qa/tests-about.js'
     });
 });
 

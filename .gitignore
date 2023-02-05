@@ -1,2 +1,6 @@
 #dist
 .dist
+
+
+#all node modules
+*/node_modules
